@@ -6,7 +6,7 @@ import './Sidebar.css';
 
 function App() {
   return (
-    // BEM naming conventions
+    // BEM naming convention
     <div className="app">
       <Header />
 
