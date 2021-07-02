@@ -8,11 +8,13 @@ import ChatIcon from '@material-ui/icons/Chat';
 import StorefrontIcon from '@material-ui/icons/Storefront';
 import VideoLibraryIcon from '@material-ui/icons/VideoLibrary';
 import ExpandMoreOutlinedIcon from '@material-ui/icons/ExpandMoreOutlined';
+import { useStateValue } from './StateProvider';
 
 function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-      <SidebarRow src='https://yt3.ggpht.com/RZbPM0UjvvGsLbSTWihSTAOHisbnssHslO98ttu4cb6TkbymKBx8GyVxEa5MCwEFpDx4oK-iTw=s88-c-k-c0x00ffffff-no-rj' title='Username'/>
+      <SidebarRow src={user.photoURL} title={user.displayName}/>
       <SidebarRow Icon={LocalHospitalIcon} title='COVID-19 Information Center'/>
       <SidebarRow Icon={EmojiFlagsIcon} title='Pages'/>
       <SidebarRow Icon={PeopleIcon} title='Friends'/>
